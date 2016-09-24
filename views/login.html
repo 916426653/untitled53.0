@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>登录</title>
+<link rel="stylesheet" href="/stylesheets/bootstrap.css">
+
+<link rel="stylesheet" href="../stylesheets/reset.css">
+
+<!--<link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />-->
+<link rel="stylesheet" href="../stylesheets/login.css">
+	<link rel="stylesheet" href="../stylesheets/bootstrap-responsive.css">
+
+</head>
+
+<body>
+
+<div id="window" style="display:none;">
+
+	<div class="page page-front">
+		<div class="page-content">
+			<div class="input-row">
+				<label class="label fadeIn">用户名</label>
+				<input id="username" required="required" type="text" data-fyll="pineapple" class="input fadeIn delay1"/>
+			</div>
+			<div class="input-row">
+				<label class="label fadeIn delay2">密码</label>
+				<input id="password" required="required" type="password" data-fyll="hackmeplease" class="input fadeIn delay3"/>
+			</div>
+			<div class="input-row perspective">
+				<button id="submit"  class="button load-btn fadeIn delay4" onclick="postData(this)" >
+					<span class="default"><i class="ion-arrow-right-b"></i>登录</span>
+					<div class="load-state">
+						<div class="ball"></div>
+						<div class="ball"></div>
+						<div class="ball"></div>
+					</div>
+				</button>
+			</div>
+		</div>
+	</div>
+	
+	<div class="page page-back">
+		<div class="page-content">
+			<img src="../images/avatar.jpg" class="avatar"/>
+			<p class="welcome">欢迎回来！</p>
+			<div class="perspective">
+				<button class="button inline trigger-anim-replay"><i class="ion-refresh"></i>确定</button>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+<div class="browser-warning hidden">问题或怪异的动画？让它玩一次，然后按重播。</div>
+
+
+<div style="text-align:center;">
+<!--<p>来源:<a href="http://down.admin5.com" target="_blank">天韵坊源码</a></p>-->
+</div>
+
+<div class="modal fade" id="msg-box">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Modal title</h4>
+			</div>
+			<div class="modal-body">
+				<p id="content">此用户名已被用&hellip;</p>
+			</div>
+			<div class="modal-footer">
+
+				<button type="button" id="yes" class="btn btn-default" data-dismiss="modal">确定</button>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src='../javascripts/jquery-3.1.0.js'></script>
+<script src="../javascripts/bootstrap.js"></script>
+<script type="text/javascript" src='../javascripts/fyll.js'></script>
+<script type="text/javascript" src="../javascripts/index.js"></script>
+<script type="text/javascript">
+	function postData (_this){
+		$.post('/login', {
+			name: $('#username').val(),
+			password: $('#password').val()
+		}, function (data){
+			console.log(data);
+			$('#content').html(data.msg);
+			$('#msg-box').modal('show');
+			$('#yes').click(function () {
+				if(data.status){
+					window.location.href = '/';
+				}
+			})
+		});
+	}
+</script>
+</html>

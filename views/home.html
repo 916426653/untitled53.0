@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>首页</title>
+		<script src="/tianyunfang/js/jquery-3.1.0.js"></script>
+		<script src="/tianyunfang/js/miaov.js"></script>
+		<script src="/tianyunfang/js/home.js"></script>
+		<link rel="shortcut icon" href="img/favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="/tianyunfang/css/public.css" />
+		<link rel="stylesheet" type="text/css" href="/tianyunfang/css/home.css" />
+		<link rel="stylesheet" type="text/css" href="/tianyunfang/css/moveimg.css" />
+	</head>
+	<body>
+		<div id="content">
+			<nav>
+				<div class="nav_side">
+					<div class="nav_sidet">
+						<strong>加为收藏</strong> <strong>设为首页</strong>
+					</div>
+					<div class="nav_sidef">
+						<a href="/" id="registered1"><%= user.name %></a>
+						<a href="/logout" id="registered">退出</a>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</nav>
+			<main>
+				<!--图片滚动-->
+				<div class="control">
+					<label id="chk_pause"><input type="checkbox" checked="checked">间隔停顿</label>
+					<select id="pause_time">
+					<option value="100">短</option>
+					<option value="1000" selected="selected">中</option>
+					<option value="3000">长</option>
+					</select> 滚动速度：
+					<select id="sel_speed">
+						<option value="2">慢</option>
+						<option value="5">中</option>
+						<option value="10">快</option>
+					</select>
+				</div>
+				<div class="roll" id="roll">
+					<a href="javascript:void(0);" class="btn_left"></a>
+					<a href="javascript:void(0);" class="btn_right"></a>
+					<div class="wrap">
+						<ul>
+							<li>
+								<a href="http://www.miaov.com/"><img src="/tianyunfang/img/images/move1.jpg" /></a>
+							</li>
+							<li>
+								<a href="http://www.miaov.com/"><img src="/tianyunfang/img/images/move2.jpg" /></a>
+							</li>
+							<li>
+								<a href="http://www.miaov.com/"><img src="/tianyunfang/img/images/move3.jpg" /></a>
+							</li>
+							<li>
+								<a href="http://www.miaov.com/"><img src="/tianyunfang/img/images/move4.jpg" /></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--小说分类-->
+				<div class="novel">
+					<div class="novel_list1">
+						<div class="listnav" name="1"><a href="../tianyunfang/htm/shiftednovel.html">玄幻小说</a></div>
+						<div class="works" id="books">
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+						</div>
+						<div class="works message" id="message">
+							完结半价库是完结文库完结半价库是完结文库中以半价出售的作品，该部分作品均为完结作品，整本购买的话，在原价的基础上，五折优惠。同时，完结半价库内的所有作品，也都可以选择以包月方式购买，一个月内，支付3元可读任意5本，支付15元，可随意阅读库内所有作品。
+						</div>
+						<div class="listnav"><a href="../tianyunfang/htm/finsh.html">完结文库</a></div>
+					</div>
+					<div class="novel_list2">
+						<div class="listnav" name="2"><a href="../tianyunfang/htm/lovenoval.html">言情小说</a></div>
+						<div class="works" id="books" >
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+						</div>
+						<div class="works message" id="message">正版版权基地，大陆简体出版、港台繁体出版、海外出版，以每天3本的签约量高速发展。其中影视改编版权，漫画改编版权，有声读物改编版权，无线版权阅读、电子书版权合作等版权输入及输出合作，在行业内占据先行地位。海外合作区域已发展至泰国、韩国、新加坡等。</div>
+						<div class="listnav"><a href="../tianyunfang/htm/publish.html">出版影视</a></div>
+					</div>
+					<div class="novel_list3">
+						<div class="listnav" name="3"><a href="../tianyunfang/htm/famous.html">中外名著</a></div>
+						<div class="works" id="books">
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+						</div>
+						<div class="works message" id="message">天韵文学城倾力打造的综合游戏站，为JJER们提供"快乐而专业"的互动娱乐体验。无论你是备受推崇的作者，还是与晋江文学城共同成长的忠实读者，又或许只是际会巧合，因喜欢阅读和书写而来到晋江文学城的平凡女孩，我们都希望为你打造一块驻足的平台。</div>
+						<div class="listnav"><a href="../tianyunfang/htm/play.html">娱乐游戏</a></div>
+					</div>
+					<div class="novel_list4">
+						<div class="listnav" name="4"><a href="../tianyunfang/htm/histroy.html">架空小说</a></div>
+						<div class="works" id="books">
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+							<p><a href=""></a> <a href=""></a></p>
+						</div>
+						<div class="works message" id="message" >天韵论坛也称天韵“小粉红”，域名为“bbs.tywxc.net”。是晋江一直以来的热点区域，晋江的小粉红，一直是一个有爱的地方。在这里，我们可以天涯共此时的八卦、灌水、翻滚、树洞，在这里我们可以求文、留评、我们可以湖绿可以直播。发言可以使用不固定昵称，晋江的小粉红发展出独特的“马甲文化”。</div>
+						<div class="listnav"><a href="/">天韵论坛</a></div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<footer>
+					<div class="alink"><a href="">联系我们-</a><a href="">联系方式-</a><a href="">联系客服-</a><a href="">读者导航-</a><a href="">作者导航-</a><a href="">招纳贤才-</a>
+						<a href="">权利声明-</a><a href="">广告服务-</a><a href="">友情链接-</a><a href="">常见问题-</a><a href="">诊断工具</a></div>
+					<div class="show">Copyright By 天韵学城 www.tywxc.net All rights reserved</div>
+					<div class="declaraction">本站全部作品（包括小说和书评）版权为原创作者所有 本网站仅为网友写作提供上传空间储存平台。本站所收录作品、互动话题、书库评论及本站所做之广告均属其个人行为
+					与本站立场无关。网站页面版权为晋江文学城所有，任何单位，个人未经授权不得转载、复制、分发，以及用作商业用途。
+					重要声明：请所有作者发布作品时严格遵守国家互联网信息管理办法规定。我们拒绝任何色情暴力小说，一经发现，立即删除违规作品，严重者将同时封掉作者账号。
+					请大家联合起来，共创和谐干净网络。</div>
+				</footer>
+			</main>
+		</div>
+	</body>
+</html>
